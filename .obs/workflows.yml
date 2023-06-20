@@ -27,3 +27,4 @@ rebuild:
     branches:
       only:
         - master
+
