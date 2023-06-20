@@ -3,7 +3,7 @@ testbuild:
     - branch_package:
         source_project: home:dleidi:dontclickme
         source_package: obs-server
-        target_project: PR-%{SCM_PR_NUMBER}
+        target_project: home:dleidi:dontclickme:PR-%{SCM_PR_NUMBER}
         add_repositories: disable
     # - configure_repositories:
     #     project: home:dleidi:dontclickme
