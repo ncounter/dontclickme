@@ -4,16 +4,20 @@ testbuild:
         source_project: home:dleidi:dontclickme
         source_package: obs-server
         target_project: home:dleidi:dontclickme:PR-%{SCM_PR_NUMBER}
-        add_repositories: disable
-    - configure_repositories:
-        project: home:dleidi:dontclickme
-        repositories:
-          - name: 15.4
-            paths:
-              - target_project: home:dleidi:dontclickme
-                target_repository: 15.4
-            architectures:
-              - x86_64
+    - branch_package:
+        source_project: home:dleidi:dontclickme
+        source_package: obs-server
+        target_project: home:dleidi:dontclickme:PR-%{SCM_PR_NUMBER}-second
+        # add_repositories: disable
+    # - configure_repositories:
+    #     project: home:dleidi:dontclickme
+    #     repositories:
+    #       - name: 15.4
+    #         paths:
+    #           - target_project: home:dleidi:dontclickme
+    #             target_repository: 15.4
+    #         architectures:
+    #           - x86_64
   filters:
     event: pull_request
 
