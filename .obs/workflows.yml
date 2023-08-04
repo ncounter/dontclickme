@@ -1,25 +1,31 @@
-testbuild:
-  steps:
-    - branch_package:
-        source_project: home:Admin
-        source_package: at
-        target_project: home:Admin:PR-%{SCM_PR_NUMBER}
-        add_repositories: disable
-    - branch_package:
-        source_project: home:Admin
-        source_package: at
-        target_project: home:Admin:PR-%{SCM_PR_NUMBER}-second
-        add_repositories: disable
-  filters:
-    event: pull_request
+# testbuild:
+#   steps:
+#     - branch_package:
+#         source_project: home:Admin
+#         source_package: at
+#         target_project: home:Admin:PR-%{SCM_PR_NUMBER}
+#         add_repositories: disable
+#     - branch_package:
+#         source_project: home:Admin
+#         source_package: at
+#         target_project: home:Admin:PR-%{SCM_PR_NUMBER}-second
+#         add_repositories: disable
+#   filters:
+#     event: pull_request
 
-rebuild:
+# rebuild:
+#   steps:
+#     - trigger_services:
+#         project: home:Admin
+#         package: at
+#   filters:
+#     event: push
+#     branches:
+#       only:
+#         - master
+
+workflow:
   steps:
-    - trigger_services:
+    - rebuild_package:
         project: home:Admin
-        package: at
-  filters:
-    event: push
-    branches:
-      only:
-        - master
+        package: hello_world
