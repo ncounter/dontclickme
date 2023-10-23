@@ -25,8 +25,7 @@
 #         - master
 
 workflow:
-  steps: asd d12 !@$%^ !~~ 4324 
-        
+  steps:
     - rebuild_package:
         project: home:Admin
         package: hello_world
